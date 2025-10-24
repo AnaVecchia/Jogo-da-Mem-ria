@@ -1,0 +1,89 @@
+body {
+    background-color: #1a1a1c;
+    color: #FFF;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.placar-container {
+    display: flex;
+    justify-content: space-around;
+    width: 350px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+}
+
+.jogador {
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.jogador span {
+    display: block;
+    text-align: center;
+}
+
+.jogador.ativo {
+    background-color: #4a90e2;
+    transform: scale(1.1);
+}
+
+.jogo-da-memoria-container {
+    display: grid;
+    grid-template-columns: repeat(4, 100px); 
+    gap: 15px;
+    perspective: 1000px; 
+}
+
+.carta {
+    width: 100px;
+    height: 140px;
+    position: relative;
+    cursor: pointer;
+    
+    transform-style: preserve-3d; 
+    transition: transform 0.6s;
+}
+
+.frente-carta, .tras-carta {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 8px;
+    
+    backface-visibility: hidden; 
+}
+
+.tras-carta {
+    background-color: #4a90e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+}
+
+.frente-carta {
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    
+    transform: rotateY(180deg); 
+}
+
+
+.carta.virada {
+    transform: rotateY(180deg);
+}
